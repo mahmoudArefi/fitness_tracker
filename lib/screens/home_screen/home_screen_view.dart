@@ -33,7 +33,7 @@ class HomeScreenView extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: Get.height * 0.1,
+                height: Get.height * 0.08,
               ),
               DayPicker(testDays),
               ShowTodayMuscles(),

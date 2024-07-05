@@ -54,8 +54,8 @@ class DayPickerDayShowWidget extends GetView<HomeScreenController> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    isDaySelected ? MyColor.phosphorous : Colors.black.withOpacity(0.4),
-                    isDaySelected ? MyColor.phosphorous : Colors.white.withOpacity(0.4),
+                    isDaySelected ? MyColor.zetey : Colors.black.withOpacity(0.4),
+                    isDaySelected ? MyColor.zetey.withOpacity(0.9) : Colors.white.withOpacity(0.4),
                   ],
                 ),
               ),

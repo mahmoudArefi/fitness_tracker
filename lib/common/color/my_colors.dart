@@ -7,4 +7,5 @@ class MyColor {
   static Color shadow = phosphorous.withOpacity(0.24);
   static Color white = const Color(0xffF9F6F6);
   static Color textColor = const Color(0xffffffff);
+  static Color zetey = const Color(0x250db028);
 }

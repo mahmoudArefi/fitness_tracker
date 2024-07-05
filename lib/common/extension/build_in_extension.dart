@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 extension BuildInWidgetExtension on Widget {
-  sizedBox({double? h, double? w}) {
-    return SizedBox(
-      height: h,
-      width: w,
-      child: this,
+  sizedBox({double? h, double? w, bool test = false}) {
+    return Container(
+      color: test ? Colors.green : null,
+      child: SizedBox(
+        height: h,
+        width: w,
+        child: this,
+      ),
     );
   }
 
@@ -23,7 +26,7 @@ extension BuildInWidgetExtension on Widget {
     );
   }
 
-  onTap(Function function){
+  onTap(Function function) {
     return InkWell(
       onTap: function(),
       child: this,

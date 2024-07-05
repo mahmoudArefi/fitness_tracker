@@ -20,8 +20,9 @@ class MaterialGoalAmount extends GetView<HomeScreenController> {
       child: Obx(
         () => GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisSpacing: Get.width * 0.01,
-            mainAxisSpacing: Get.width * 0.01,
+            mainAxisExtent: 76,
+            crossAxisSpacing: Get.width * 0.05,
+            mainAxisSpacing: Get.width * 0.05,
             crossAxisCount: 2,
             childAspectRatio: 3, // Adjust the aspect ratio as needed
           ),
@@ -44,14 +45,15 @@ class _MaterialAmountGoalShowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: Get.height * 0.1,
+        height: Get.height * 0.3,
         width: Get.width * 0.4,
         child: LayoutBuilder(
           builder: (context, size) => Container(
-            decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(10)), color: MyColor.shadow),
+            decoration:  BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                color: MyColor.zetey ),
             child: Padding(
-              padding: EdgeInsets.all(size.maxHeight * 0.06),
+              padding: EdgeInsets.all(size.maxHeight * 0.09),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -60,24 +62,30 @@ class _MaterialAmountGoalShowWidget extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderRadius: const BorderRadius.all(Radius.circular(10)),
                             color: MyColor.phosphorous),
                         child: Center(
                             child: FittedBox(
                           fit: BoxFit.fill,
                           child: SvgPicture.string(materialInfo.icon),
                         ).sizedBox(h: size.maxHeight * 0.4, w: size.maxWidth * 0.18)),
-                      ).sizedBox(h: size.maxHeight * 0.45, w: size.maxWidth * 0.2),
-                      FText(
-                        materialInfo.amount,
-                        color: MyColor.textColor,
-                      ).sizedBox(h: size.maxHeight * 0.3, w: size.maxWidth * 0.5)
+                      ).sizedBox(h: size.maxHeight *0.5 , w: size.maxHeight *0.5),
+                      Center(
+                        child: FText(
+                          materialInfo.amount,
+                          color: MyColor.textColor,
+                          fontSize: size.maxHeight*0.3,
+                          fontWeight: FontWeight.bold,
+
+                        ),
+                      ).sizedBox(h: size.maxHeight * 0.5, w: size.maxWidth * 0.6,test: false)
                     ],
-                  ),
+                  ).sizedBox(h: size.maxHeight * 0.6, test: false),
                   FText(
                     materialInfo.label,
                     color: MyColor.textColor,
-                  ).sizedBox(h: size.maxHeight * 0.3, w: size.maxWidth * 0.6)
+                    fontWeight: FontWeight.bold,
+                  ).sizedBox(h: size.maxHeight * 0.2, w: size.maxWidth * 0.9)
                 ],
               ),
             ),

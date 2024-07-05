@@ -15,10 +15,13 @@ class ShowTodayMuscles extends GetView<HomeScreenController> {
     Get.put(HomeScreenController());
     return SizedBox(
       width: double.infinity,
-      child: Obx(
-        () => Column(
-          children: controller.todayMuscles.map((element) => _TodayMuscleShow(element)).toList(),
-        ) ,
+      child: FittedBox(
+        fit: BoxFit.fitWidth,
+        child: Obx(
+          () => Column(
+            children: controller.todayMuscles.map((element) => _TodayMuscleShow(element)).toList(),
+          ) ,
+        ),
       ),
     );
   }
